@@ -9,7 +9,7 @@ function renderMovies(movie) {
     <div class="movie_header">
 	    <h2>${movie.Title}</h2>
       <p>${movie.Year}</p>
-      <p>${movie.imdbRating}</p>
+      <p>⭐ ${movie.imdbRating}</p>
 	  </div>
     <div class="movie_details">
       <p>${movie.Runtime}</p>
