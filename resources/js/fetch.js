@@ -4,6 +4,7 @@ const mainContent = document.getElementById('main_content');
 import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
+let trial = [];
 
 let handleClick = function () {
   movieArray = [];
@@ -18,10 +19,9 @@ let handleClick = function () {
     })
     .then((movieArray) => {
       for (let movie of movieArray) {
-        fetch(`http://www.omdbapi.com/?apikey=9e510766&t=${movie}&p=short`)
+        fetch(`http://www.omdbapi.com/?apikey=9e510766&t=${movie}`)
           .then(handleResponse)
           .then((data) => {
-            console.log(data.Title);
             if (movieData.indexOf(data.Title) === -1 && data.Poster !== 'N/A') {
               movieData.push(data.Title);
               renderMovies(data);
