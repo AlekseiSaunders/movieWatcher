@@ -1,13 +1,13 @@
-const searchBtn = document.getElementById('movieSearchBtn');
 const searchInput = document.getElementById('movieSearchInput');
-let movieArray = [];
 let movieData = [];
 
 let handleClick = function () {
+  let movieArray = [];
+  movieData = [];
   fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
-      for (movie of data.Search) {
+      for (let movie of data.Search) {
         movieArray.push(movie.Title);
       }
       return movieArray;
@@ -19,6 +19,7 @@ let handleClick = function () {
           .then((data) => movieData.push(data));
       });
       console.log(movieData);
+      return movieData;
     })
     .catch((error) => console.log(error));
 };
@@ -65,4 +66,5 @@ function handleTextResponse(response) {
   });
 }
 
-searchBtn.addEventListener('click', handleClick);
+
+export { movieData, handleClick };
