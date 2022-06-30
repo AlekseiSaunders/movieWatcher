@@ -1,25 +1,29 @@
 const searchInput = document.getElementById('movieSearchInput');
-let movieData = [];
+const searchBtn = document.getElementById('movieSearchBtn');
+const mainContent = document.getElementById('main_content');
+import { renderMovies } from './render.js';
 
 let handleClick = function () {
   let movieArray = [];
-  movieData = [];
+  let movieData = [];
+  mainContent.innerHTML = '';
   fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
+      console.log(1, data);
       for (let movie of data.Search) {
         movieArray.push(movie.Title);
       }
       return movieArray;
     })
     .then((movieArray) => {
-      movieArray.forEach((movie) => {
+      for (let movie of movieArray) {
         fetch(`http://www.omdbapi.com/?apikey=9e510766&t=${movie}&p=short`)
           .then(handleResponse)
-          .then((data) => movieData.push(data));
-      });
-      console.log(movieData);
-      return movieData;
+          .then((data) => {
+            renderMovies(data);
+          });
+      }
     })
     .catch((error) => console.log(error));
 };
@@ -66,5 +70,4 @@ function handleTextResponse(response) {
   });
 }
 
-
-export { movieData, handleClick };
+searchBtn.addEventListener('click', handleClick);
