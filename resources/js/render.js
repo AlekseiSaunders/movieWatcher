@@ -4,7 +4,9 @@ function renderMovies(movie) {
   let movieArticle = document.createElement('article');
   movieArticle.classList.add('movie_article');
   movieArticle.innerHTML = `
-	<img src="${movie.Poster}">
+  <div class="poster">
+	  <img src="${movie.Poster}">
+  </div>
   <div class="movie_info">
     <div class="movie_header">
 	    <h2>${movie.Title}</h2>
