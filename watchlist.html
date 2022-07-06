@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="./resources/css/reset.css">
+	<link rel="stylesheet" href="./resources/css/styles.css">
+	<title>Scrimba Movie Picker</title>
+</head>
+
+<body>
+	<header>
+		<div class="content_wrapper">
+			<article class="title_banner">
+				<h1>Find your film</h1>
+				<a class="title_link" href="index.html">Search for Movies</a>
+			</article>
+			<article class="input_row">
+				<input type="search" placeholder="Search for a movie" name="movieSearch" id="movieSearchInput">
+				<button id="movieSearchBtn">Search</button>
+			</article>
+		</div>
+	</header>
+	<div class="content_wrapper">
+		<section class="main_content" id="main_content">
+			<img class="placeholder_icon" src="./resources/media/noun-filmstrip-407066-9B9B9B.svg" alt="film icon">
+			<p>Start Exploring</p>
+		</section>
+	</div>
+	<footer>
+		<a href="https://www.flaticon.com/free-icons/film" title="film icons">Film icons created by Freepik - Flaticon</a>
+	</footer>
+	<script src="./resources/js/fetch.js" type="module"></script>
+	<script src="./resources/js/render.js" type="module"></script>
+
+</body>
+
+</html>
