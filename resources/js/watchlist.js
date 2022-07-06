@@ -13,11 +13,17 @@ function getLocalStorage() {
 getLocalStorage();
 
 function renderLocalStorage(movies) {
+  if (movieIDs.length < 1) {
+    mainContent.innerHTML = `
+<img class="placeholder_icon" src="./resources/media/noun-filmstrip-407066-9B9B9B.svg" alt="film icon">
+			<p>You don't have any saved movies yet!</p>
+`;
+  }
   console.log(3, movies);
   for (let movie of movies) {
     let film = JSON.parse(window.localStorage.getItem(movie));
     console.log(film.title);
-
+    console.log(film.movieID);
     let movieArticle = document.createElement('article');
     movieArticle.classList.add('movie_article');
     movieArticle.innerHTML = `
@@ -28,38 +34,25 @@ function renderLocalStorage(movies) {
       <div class="movie_header">
   	    <h2>${film.title}</h2>
         <p>${film.year}</p>
-        <p>⭐ ${film.imdbRating}</p>
+        <p>⭐ ${film.rating}</p>
   	  </div>
       <div class="movie_details">
         <p>${film.runtime}</p>
         <p>${film.genre}</p>
-        <button id=${film.imdbID} class="add_btn" data-movieID=${film.imdbID}>Add</button>
+        <button id=${film.movieID} class="remove_btn" data-movieID=${film.movieID}>Remove</button>
       </div>
       <div class="movie_plot">
   			<p>${film.plot}</p>
     </div>
   `;
     mainContent.appendChild(movieArticle);
-    //     // const addBtn = document.getElementById(`${movie.imdbID}`);
-    //     // addBtn.addEventListener(
-    //     //   'click',
-    //     //   () => {
-    //     //     window.localStorage.setItem(`${movie.imdbID}`, {
-    //     //       poster: `${movie.Poster}`,
-    //     //       title: `${movie.Title}`,
-    //     //       year: `${movie.Year}`,
-    //     //       rating: `${movie.imdbRating}`,
-    //     //       runtime: `${movie.Runtime}`,
-    //     //       genre: `${movie.Genre}`,
-    //     //       plot: `${movie.Plot}`,
-    //     //     });
-    //     //   }
-    //     // handleAddClick
-    //     // () => {
-    //     //     console.log(event.target.dataset.movie);
-    //     //   }
-    //     // );
-    //   }
+    const removeBtn = document.getElementById(`${film.movieID}`);
+    removeBtn.addEventListener('click', () => {
+      let movie = film.movieID;
+      console.log(movie);
+      window.localStorage.removeItem(movie);
+      window.location.reload();
+    });
   }
 }
 
