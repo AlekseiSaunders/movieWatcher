@@ -16,7 +16,7 @@ function renderMovies(movie) {
     <div class="movie_details">
       <p>${movie.Runtime}</p>
       <p>${movie.Genre}</p>
-      <button id=${movie.imdbID} class="add_btn" data-movie=${movie.imdbID}>Add</button>
+      <button id=${movie.imdbID} class="add_btn" data-movieID=${movie.imdbID}>Add</button>
     </div>
     <div class="movie_plot">
 			<p>${movie.Plot}</p>
@@ -26,19 +26,35 @@ function renderMovies(movie) {
   const addBtn = document.getElementById(`${movie.imdbID}`);
   addBtn.addEventListener(
     'click',
-    handleAddClick
+    () => {
+      let movieToStore = {
+        poster: `${movie.Poster}`,
+        title: `${movie.Title}`,
+        year: `${movie.Year}`,
+        rating: `${movie.imdbRating}`,
+        runtime: `${movie.Runtime}`,
+        genre: `${movie.Genre}`,
+        plot: `${movie.Plot}`,
+        movieID: `${movie.imdbID}`,
+      };
+      window.localStorage.setItem(
+        `${movie.imdbID}`,
+        JSON.stringify(movieToStore)
+      );
+    }
+    // handleAddClick
     // () => {
     //     console.log(event.target.dataset.movie);
     //   }
   );
 }
 
-function handleAddClick(event) {
-  console.log(event.target.dataset.movie);
-  window.localStorage.setItem(
-    event.target.dataset.movie,
-    event.target.dataset.movie
-  );
-}
+// function handleAddClick(event) {
+//   console.log(event.target.dataset.movieID);
+//   window.localStorage.setItem(
+//     event.target.dataset.movieID,
+//     event.target.dataset.movieID
+//   );
+// }
 
 export { renderMovies };
