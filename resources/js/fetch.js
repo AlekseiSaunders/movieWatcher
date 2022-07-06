@@ -4,7 +4,12 @@ const mainContent = document.getElementById('main_content');
 import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
-let trial = [];
+
+class Movie {
+  constructor(data) {
+    Object.assign(this, data);
+  }
+}
 
 let handleClick = function () {
   movieArray = [];
@@ -15,6 +20,7 @@ let handleClick = function () {
       for (let movie of data.Search) {
         movieArray.push(movie.Title);
       }
+      console.log(movieArray);
       return movieArray;
     })
     .then((movieArray) => {
@@ -22,6 +28,8 @@ let handleClick = function () {
         fetch(`http://www.omdbapi.com/?apikey=9e510766&t=${movie}`)
           .then(handleResponse)
           .then((data) => {
+            console.log(data);
+            movieData.push(data);
             if (movieData.indexOf(data.Title) === -1 && data.Poster !== 'N/A') {
               movieData.push(data.Title);
               renderMovies(data);
@@ -31,6 +39,14 @@ let handleClick = function () {
     })
     .catch((error) => console.log(error));
 };
+
+async function getMovieData(movie) {
+  let response = await fetch(
+    `http://www.omdbapi.com/?apikey=9e510766&t=${movie}`
+  );
+  let data = await response.json();
+  renderMovies(data);
+}
 
 function handleResponse(response) {
   const contentType = response.headers.get('content-type');
@@ -73,5 +89,6 @@ function handleTextResponse(response) {
     }
   });
 }
+
 
 searchBtn.addEventListener('click', handleClick);
