@@ -5,7 +5,7 @@ import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
 
-let handleClick = function (event) {
+let handleSubmit = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
   fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
@@ -92,5 +92,5 @@ function handleTextResponse(response) {
   });
 }
 
-searchInput.addEventListener('submit', handleClick);
-searchBtn.addEventListener('click', handleClick);
+searchInput.addEventListener('submit', handleSubmit);
+searchBtn.addEventListener('click', handleSubmit);
