@@ -16,7 +16,9 @@ function renderMovies(movie) {
     <div class="movie_details">
       <p>${movie.Runtime}</p>
       <p>${movie.Genre}</p>
-      <button id=${movie.imdbID} class="add_btn" data-movieID=${movie.imdbID}>Add</button>
+      <button id=${movie.imdbID} class="add_btn" data-movieID=${movie.imdbID}><span class="material-icons">
+add_circle
+</span>Add to watchlist</button>
     </div>
     <div class="movie_plot">
 			<p>${movie.Plot}</p>
