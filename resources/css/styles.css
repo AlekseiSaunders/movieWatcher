@@ -109,9 +109,38 @@ h1 {
   justify-content: flex-start;
   color: black;
   padding: 0 0 10px 0;
+  align-items: baseline;
 }
 .movie_details {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   padding: 0 0 10px 0;
+  align-items: center;
+}
+.movie_details > *:not(button) {
+  padding-right: 20px;
+}
+.add_btn,
+.remove_btn {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+  display: flex;
+  border: none;
+  background-color: #fff;
+}
+.add_btn > .material-icons,
+.remove_btn > .material-icons {
+  padding-right: 5px;
+}
+.material-icons.md-18 {
+  font-size: 18px;
+}
+.material-icons.md-24 {
+  font-size: 24px;
+}
+.material-icons.md-36 {
+  font-size: 36px;
+}
+.material-icons.md-48 {
+  font-size: 48px;
 }
