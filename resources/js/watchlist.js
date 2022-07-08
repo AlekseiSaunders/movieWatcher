@@ -17,6 +17,8 @@ function renderLocalStorage(movies) {
     mainContent.innerHTML = `
 <img class="placeholder_icon" src="./resources/media/noun-filmstrip-407066-9B9B9B.svg" alt="film icon">
 			<p>You don't have any saved movies yet!</p>
+<a href="https://www.flaticon.com/free-icons/film" title="film icons">Film icons created by Freepik -
+					Flaticon</a>
 `;
   }
   console.log(3, movies);
