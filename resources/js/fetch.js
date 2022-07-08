@@ -5,18 +5,19 @@ import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
 
-class Movie {
-  constructor(data) {
-    Object.assign(this, data);
-  }
-}
-
-let handleClick = function () {
+let handleClick = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
   fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
+      if (!data.Search) {
+        mainContent.innerHTML = `
+				<p>Sorry, there are no results for that movie title.</p>
+
+				<p>Please check your spelling and try again!</p>
+`;
+      }
       for (let movie of data.Search) {
         movieArray.push(movie.Title);
       }
@@ -38,6 +39,7 @@ let handleClick = function () {
       }
     })
     .catch((error) => console.log(error));
+  event.preventDefault();
 };
 
 async function getMovieData(movie) {
@@ -90,5 +92,5 @@ function handleTextResponse(response) {
   });
 }
 
-
+searchInput.addEventListener('submit', handleClick);
 searchBtn.addEventListener('click', handleClick);
