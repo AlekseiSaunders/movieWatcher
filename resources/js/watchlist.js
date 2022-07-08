@@ -30,7 +30,7 @@ function renderLocalStorage(movies) {
     movieArticle.classList.add('movie_article');
     movieArticle.innerHTML = `
     <div class="poster">
-  	  <img src="${film.poster}">
+  	  <img src="${film.poster}" alt="Movie Poster for ${film.title}">
     </div>
     <div class="movie_info">
       <div class="movie_header">

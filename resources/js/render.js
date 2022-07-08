@@ -5,7 +5,7 @@ function renderMovies(movie) {
   movieArticle.classList.add('movie_article');
   movieArticle.innerHTML = `
   <div class="poster">
-	  <img src="${movie.Poster}">
+	  <img src="${movie.Poster}" alt="Movie Poster for ${movie.Title}">
   </div>
   <div class="movie_info">
     <div class="movie_header">
