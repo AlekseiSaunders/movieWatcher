@@ -28,6 +28,8 @@
 
 body {
   font-family: 'Inter', sans-serif;
+  background-color: hsla(var(--surface2));
+  color: hsla(var(--element1));
 }
 
 header {
@@ -67,8 +69,8 @@ h1 {
 }
 .title_link {
   text-decoration: none;
-  color: white;
   font-size: 1.75em;
+  color: white;
 }
 .input_row {
   display: relative;
@@ -106,7 +108,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: #757575;
+  color: hsla(var(--element1));
   padding-top: 100px;
 }
 .placeholder_icon {
@@ -135,7 +137,7 @@ h1 {
   flex-wrap: wrap;
   gap: 20px;
   justify-content: flex-start;
-  color: black;
+  color: hsla(var(--element1));
   padding: 0 0 10px 0;
   align-items: baseline;
 }
