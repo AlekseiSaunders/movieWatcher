@@ -6,6 +6,7 @@
   --element2: 0 0% 13% / 1;
   --element3: 0 0% 20% / 1;
   --elementInverse: 0 0% 93% / 1;
+  --accentLine: 0 0% 80% / 1;
 }
 
 :root[color-mode='dark'] {
@@ -16,6 +17,7 @@
   --element2: 0 0% 87% / 1;
   --element3: 0 0% 80% / 1;
   --elementInverse: 0 0% 7% / 1;
+  --accentLine: 0 0% 30% / 1;
 }
 
 :root[color-mode='light'] .light--hidden {
@@ -129,7 +131,7 @@ h1 {
   gap: 20px;
   margin-bottom: 20px;
   padding-bottom: 20px;
-  border-bottom: 2px solid lightgray;
+  border-bottom: 2px solid hsla(var(--accentLine));
 }
 
 .movie_header {
@@ -156,7 +158,8 @@ h1 {
   padding: 0.5em 0.75em;
   display: flex;
   border: none;
-  background-color: #fff;
+  color: hsla(var(--element1));
+  background-color: hsla(var(--surface3));
 }
 .add_btn > .material-icons,
 .remove_btn > .material-icons {
