@@ -41,9 +41,9 @@ function renderLocalStorage(movies) {
       <div class="movie_details">
         <p>${film.runtime}</p>
         <p>${film.genre}</p>
-        <button id=${film.movieID} class="remove_btn" data-movieID=${film.movieID}><span class="material-icons">
+        <button id=${film.movieID} class="remove_btn" data-movieID=${film.movieID} aria-label="Remove movie from watchlist"><span class="material-icons">
 remove_circle
-</span>Remove from watchlist</button>
+</span>Remove</button>
       </div>
       <div class="movie_plot">
   			<p>${film.plot}</p>
