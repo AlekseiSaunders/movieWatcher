@@ -2,7 +2,7 @@ let movieIDs = [];
 const mainContent = document.getElementById('main_content');
 
 function getLocalStorage() {
-  let keys = Object.keys(localStorage);
+  let keys = Object.keys(localStorage).filter((key) => key !== 'color-mode');
   let movieNumber = keys.length;
 
   for (let i = 0; i < movieNumber; i++) {
