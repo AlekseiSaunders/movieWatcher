@@ -1,3 +1,23 @@
+:root[color-mode='light'] {
+  --surface1: 0 0% 90% / 1;
+  --surface2: 0 0% 95% / 1;
+  --surface3: 0 0% 100% / 1;
+  --element1: 0 0% 7% / 1;
+  --element2: 0 0% 13% / 1;
+  --element3: 0 0% 20% / 1;
+  --elementInverse: 0 0% 93% / 1;
+}
+
+:root[color-mode='dark'] {
+  --surface1: 0 0% 15% / 1;
+  --surface2: 0 0% 20% / 1;
+  --surface3: 0 0% 25% / 1;
+  --element1: 0 0% 93% / 1;
+  --element2: 0 0% 87% / 1;
+  --element3: 0 0% 80% / 1;
+  --elementInverse: 0 0% 7% / 1;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }
