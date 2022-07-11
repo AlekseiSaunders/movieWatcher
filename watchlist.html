@@ -11,6 +11,8 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<link rel="stylesheet" href="./resources/css/reset.css">
 	<link rel="stylesheet" href="./resources/css/styles.css">
 	<script src="./resources/js/check_color_pref.js"></script>
@@ -22,7 +24,19 @@
 		<div class="content_wrapper">
 			<article class="title_banner">
 				<h1>My Watchlist</h1>
-				<a class="title_link" href="index.html">Search for Movies</a>
+				<div>
+					<a class="title_link" href="index.html">Search for Movies</a>
+					<!-- light mode button -->
+					<button class="color-mode__btn light--hidden" aria-label="Toggle light mode"><span
+							class="material-symbols-outlined">
+							light_mode
+						</span></button>
+					<!-- dark mode button -->
+					<button class="color-mode__btn dark--hidden" aria-label="Toggle dark mode"><span
+							class="material-symbols-outlined">
+							dark_mode</span>
+					</button>
+				</div>
 			</article>
 		</div>
 	</header>
