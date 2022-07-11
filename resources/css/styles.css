@@ -69,11 +69,15 @@ h1 {
   color: white;
   margin-top: 60px;
 }
+.interactive_div {
+  display: flex;
+}
 .title_link {
   text-decoration: none;
   font-size: 1.75em;
   color: white;
 }
+
 .input_row {
   display: relative;
   display: flex;
@@ -164,6 +168,13 @@ h1 {
 .add_btn > .material-icons,
 .remove_btn > .material-icons {
   padding-right: 5px;
+}
+.color-mode__btn {
+  background-color: hsla(0 0% 15% / 1);
+  color: hsla(0 0% 80% / 1);
+  border: none;
+  align-self: flex-end;
+  margin-left: 10px;
 }
 .material-icons.md-18 {
   font-size: 18px;
