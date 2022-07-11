@@ -18,6 +18,14 @@
   --elementInverse: 0 0% 7% / 1;
 }
 
+:root[color-mode='light'] .light--hidden {
+  display: none;
+}
+
+:root[color-mode='dark'] .dark--hidden {
+  display: none;
+}
+
 body {
   font-family: 'Inter', sans-serif;
 }
