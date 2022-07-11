@@ -11,6 +11,10 @@
 		href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Merriweather:wght@300;400&display=swap"
 		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+	<link rel="stylesheet"
+		href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 	<link rel="stylesheet" href="./resources/css/reset.css">
 	<link rel="stylesheet" href="./resources/css/styles.css">
 	<title>Scrimba Movie Picker</title>
@@ -21,7 +25,20 @@
 		<div class="content_wrapper">
 			<article class="title_banner">
 				<h1>Find your film</h1>
-				<a class="title_link" href="watchlist.html">My Watchlist</a>
+				<div>
+					<a class="title_link" href="watchlist.html">My Watchlist</a>
+					<!-- light mode button -->
+					<button class="color-mode__btn light--hidden" aria-label="Toggle light mode"><span
+							class="material-symbols-outlined">
+							light_mode
+						</span>Toggle Light Mode</button>
+					<!-- dark mode button -->
+					<button class="color-mode__btn dark--hidden" aria-label="Toggle dark mode"><span
+							class="material-symbols-outlined">
+							dark_mode</span>Toggle Dark Mode
+
+					</button>
+				</div>
 			</article>
 			<form class="input_row">
 				<label for="movieSearchInput" class="visually-hidden">Search</label>
