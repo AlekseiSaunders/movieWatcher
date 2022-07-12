@@ -45,6 +45,12 @@ h1 {
   font-size: 3em;
 }
 
+.maincontent a {
+  color: hsla(var(--element1));
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid hsla(var(--element1));
+}
 .visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
@@ -117,6 +123,14 @@ h1 {
   color: hsla(var(--element1));
   padding-top: 100px;
 }
+
+section > a {
+  color: hsla(var(--element1));
+  text-decoration: none;
+  padding-bottom: 2px;
+  border-bottom: 1px solid hsla(var(--element1));
+}
+
 .placeholder_icon {
   filter: grayscale(100%);
   width: 250px;
