@@ -4,7 +4,7 @@ const mainContent = document.getElementById('main_content');
 import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
-let APIKEY = process.env.API_KEY;
+let APIKEY = env.API_KEY;
 
 let handleSubmit = function (event) {
   movieArray = [];
