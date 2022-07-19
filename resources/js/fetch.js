@@ -4,12 +4,11 @@ const mainContent = document.getElementById('main_content');
 import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
-const APIKEY = process.env.API_KEY;
 
 let handleSubmit = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
-  fetch(`https://www.omdbapi.com/?apikey=${APIKEY}=${searchInput.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=9e510766=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
       if (!data.Search) {
