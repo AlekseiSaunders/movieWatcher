@@ -8,7 +8,7 @@ let movieArray = [];
 let handleSubmit = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
-  fetch(`http://www.omdbapi.com/?apikey=API_KEY=${searchInput.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=API_KEY=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
       if (!data.Search) {
