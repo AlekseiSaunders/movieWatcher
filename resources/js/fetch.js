@@ -9,7 +9,7 @@ let movieArray = [];
 let handleSubmit = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
-  fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
+  fetch(`https://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
       if (!data.Search) {
@@ -26,7 +26,7 @@ let handleSubmit = function (event) {
     })
     .then((movieArray) => {
       for (let movie of movieArray) {
-        fetch(`http://www.omdbapi.com/?apikey=9e510766&t=${movie}`)
+        fetch(`https://www.omdbapi.com/?apikey=9e510766&t=${movie}`)
           .then(handleResponse)
           .then((data) => {
             console.log(data);
@@ -43,7 +43,7 @@ let handleSubmit = function (event) {
 };
 async function getMovieData(movie) {
   let response = await fetch(
-    `http://www.omdbapi.com/?apikey=9e510766&t=${movie}`
+    `https://www.omdbapi.com/?apikey=9e510766&t=${movie}`
   );
   let data = await response.json();
   renderMovies(data);
