@@ -5,16 +5,16 @@ import { renderMovies } from './render.js';
 let movieData = [];
 let movieArray = [];
 
+
 let handleSubmit = function (event) {
   movieArray = [];
   mainContent.innerHTML = '';
-  fetch(`https://www.omdbapi.com/?apikey=9e510766=${searchInput.value}`)
+  fetch(`http://www.omdbapi.com/?apikey=9e510766&s=${searchInput.value}`)
     .then(handleResponse)
     .then((data) => {
       if (!data.Search) {
         mainContent.innerHTML = `
 				<p>Sorry, there are no results for that movie title.</p>
-
 				<p>Please check your spelling and try again!</p>
 `;
       }
@@ -41,7 +41,6 @@ let handleSubmit = function (event) {
     .catch((error) => console.log(error));
   event.preventDefault();
 };
-
 async function getMovieData(movie) {
   let response = await fetch(
     `http://www.omdbapi.com/?apikey=9e510766&t=${movie}`
@@ -49,7 +48,6 @@ async function getMovieData(movie) {
   let data = await response.json();
   renderMovies(data);
 }
-
 function handleResponse(response) {
   const contentType = response.headers.get('content-type');
   if (contentType.includes('application/json')) {
@@ -62,7 +60,6 @@ function handleResponse(response) {
     );
   }
 }
-
 function handleJSONResponse(response) {
   return response.json().then((json) => {
     if (response.ok) {
@@ -77,7 +74,6 @@ function handleJSONResponse(response) {
     }
   });
 }
-
 function handleTextResponse(response) {
   return response.text().then((text) => {
     if (response.ok) {
@@ -91,6 +87,5 @@ function handleTextResponse(response) {
     }
   });
 }
-
 searchInput.addEventListener('submit', handleSubmit);
 searchBtn.addEventListener('click', handleSubmit);
